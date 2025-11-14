@@ -9,6 +9,7 @@
   "author": "CircuitStream",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.13.2",
     "cors": "^2.8.5",
     "express": "^4.19.2"
   }

@@ -9,3 +9,13 @@ document.getElementById('fetchButton').addEventListener('click', function() {
         })
         .catch(error => console.error('Error fetching data: ', error));
 });
+
+document.getElementById('healthCheckButton').addEventListener('click', function() {
+    const message = document.getElementById('healthMessage').value;
+    fetch(`http://localhost:3000/health/${encodeURIComponent(message)}`)
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('healthResponse').innerHTML = `<p>${data.message}</p>`;
+        })
+        .catch(error => console.error('Error checking health: ', error));
+});
